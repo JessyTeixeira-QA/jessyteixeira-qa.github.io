@@ -26,41 +26,76 @@ if (localStorage.getItem('darkMode') === 'true') {
     icon.classList.remove('fa-moon');
     icon.classList.add('fa-sun');
 }
+
 // Função para buscar projetos do GitHub
 async function fetchGitHubProjects() {
-    const username = 'JessyTeixeira-QA'; // Seu nome de usuário do GitHub
+    const username = 'JessyTeixeira-QA';
     const projectsContainer = document.getElementById('github-projects');
+    const excludedRepos = ['jessyteixeira-qa', 'jessyteixeira-qa.github.io', 'jessicaferreirateixeira-blip'];
     
     try {
-        const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=6`);
-        const projects = await response.json();
+        const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated`);
+        let projects = await response.json();
         
         if (!Array.isArray(projects)) {
             throw new Error('Não foi possível carregar os projetos');
         }
         
+        // Filtrar repositórios excluídos
+        projects = projects.filter(project => !excludedRepos.includes(project.name));
+        
+        // Ordenar por data de atualização (mais recentes primeiro)
+        projects.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+        
         projectsContainer.innerHTML = ''; // Limpa o carregando
         
+        if (projects.length === 0) {
+            projectsContainer.innerHTML = `
+                <div class="no-projects">
+                    <i class="fas fa-folder-open"></i>
+                    <p>Nenhum projeto encontrado</p>
+                </div>
+            `;
+            return;
+        }
+        
         projects.forEach(project => {
+            // Formatar a data
+            const updatedAt = new Date(project.updated_at);
+            const formattedDate = updatedAt.toLocaleDateString('pt-BR', {
+                day: '2-digit',
+                month: 'short',
+                year: 'numeric'
+            }).replace(/ de /g, ' ');
+            
             const projectCard = document.createElement('div');
             projectCard.className = 'project-card';
             projectCard.innerHTML = `
-                <div class="project-info">
-                    <h3>${project.name}</h3>
-                    <p>${project.description || 'Sem descrição disponível'}</p>
+                <div class="project-header">
+                    <i class="fas fa-folder"></i>
                     <div class="project-links">
-                        <a href="${project.html_url}" target="_blank" aria-label="Ver no GitHub">
-                            <i class="fab fa-github"></i> Código
+                        <a href="${project.html_url}" target="_blank" rel="noopener noreferrer" aria-label="Ver no GitHub">
+                            <i class="fab fa-github"></i>
                         </a>
                         ${project.homepage ? `
-                            <a href="${project.homepage}" target="_blank" aria-label="Ver demonstração">
-                                <i class="fas fa-external-link-alt"></i> Demo
+                            <a href="${project.homepage}" target="_blank" rel="noopener noreferrer" aria-label="Ver demonstração">
+                                <i class="fas fa-external-link-alt"></i>
                             </a>
                         ` : ''}
                     </div>
-                    <div class="project-stats">
-                        <span><i class="far fa-star"></i> ${project.stargazers_count}</span>
-                        <span><i class="fas fa-code-branch"></i> ${project.forks_count}</span>
+                </div>
+                <div class="project-content">
+                    <h3>${project.name}</h3>
+                    <p>${project.description || 'Sem descrição disponível'}</p>
+                </div>
+                <div class="project-footer">
+                    <div class="project-lang">
+                        <span class="lang-dot"></span>
+                        <span>${project.language || 'Text'}</span>
+                    </div>
+                    <div class="project-updated">
+                        <i class="far fa-clock"></i>
+                        <span>Atualizado em ${formattedDate}</span>
                     </div>
                 </div>
             `;
@@ -70,8 +105,11 @@ async function fetchGitHubProjects() {
         console.error('Erro ao carregar projetos:', error);
         projectsContainer.innerHTML = `
             <div class="error-message">
-                Não foi possível carregar os projetos no momento. 
-                <a href="https://github.com/JessyTeixeira-QA" target="_blank">Ver perfil no GitHub</a>
+                <i class="fas fa-exclamation-triangle"></i>
+                <p>Não foi possível carregar os projetos no momento.</p>
+                <a href="https://github.com/JessyTeixeira-QA" target="_blank" rel="noopener noreferrer" class="btn">
+                    Ver perfil no GitHub
+                </a>
             </div>
         `;
     }

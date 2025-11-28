@@ -468,94 +468,209 @@ h1 {
 }
 
 .dark-theme .btn-secondary {
-    background-color: #2d3748;
-    color: #e2e8f0;
-    border-color: #4a5568;
+background-color: #2d3748;
+color: #e2e8f0;
+border-color: #4a5568;
 }
 /* Estilos para a seção de projetos */
+#projetos {
+padding: 5rem 2rem;
+max-width: 1200px;
+margin: 0 auto;
+}
+
+#projetos h2 {
+text-align: center;
+margin-bottom: 0.5rem;
+color: var(--text-color);
+font-size: 2rem;
+}
+
+#projetos .section-subtitle {
+text-align: center;
+color: var(--light-gray);
+margin-bottom: 3rem;
+max-width: 600px;
+margin-left: auto;
+margin-right: auto;
+}
+
 .projects-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+gap: 1.5rem;
+margin-top: 2rem;
 }
 
 .project-card {
-    background: var(--white);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+background: var(--white);
+border-radius: 8px;
+overflow: hidden;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+padding: 1.5rem;
+border: 1px solid #e1e4e8;
+display: flex;
+flex-direction: column;
+height: 100%;
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
+transform: translateY(-5px);
+box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-.project-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
+.project-header {
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+margin-bottom: 1rem;
 }
 
-.project-info {
-    padding: 1.5rem;
-}
-
-.project-info h3 {
-    margin: 0 0 0.5rem;
-    color: var(--text-color);
-}
-
-.project-info p {
-    color: var(--light-gray);
-    margin-bottom: 1rem;
-    font-size: 0.9rem;
+.project-header i.fa-folder {
+font-size: 1.8rem;
+color: var(--primary-color);
 }
 
 .project-links {
-    display: flex;
-    gap: 1rem;
+display: flex;
+gap: 0.8rem;
 }
 
 .project-links a {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.9rem;
+color: #6a737d;
+transition: color 0.2s ease;
 }
 
 .project-links a:hover {
-    text-decoration: underline;
+color: var(--primary-color);
 }
 
-/* Estilo para o tema escuro */
+.project-content {
+flex-grow: 1;
+margin-bottom: 1.5rem;
+}
+
+.project-content h3 {
+margin: 0 0 0.75rem;
+color: var(--text-color);
+font-size: 1.25rem;
+font-weight: 600;
+}
+
+.project-content p {
+color: var(--light-gray);
+font-size: 0.95rem;
+line-height: 1.5;
+margin: 0;
+}
+
+.project-footer {
+display: flex;
+justify-content: space-between;
+align-items: center;
+font-size: 0.85rem;
+color: #6a737d;
+margin-top: auto;
+padding-top: 1rem;
+border-top: 1px solid #e1e4e8;
+}
+
+.project-lang {
+display: flex;
+align-items: center;
+gap: 0.4rem;
+}
+
+.lang-dot {
+display: inline-block;
+width: 10px;
+height: 10px;
+border-radius: 50%;
+background-color: #f1e05a; /* Cor padrão para JavaScript */
+}
+
+.project-updated {
+display: flex;
+align-items: center;
+gap: 0.4rem;
+}
+
+/* Estilos para mensagens de carregamento e erro */
+.loading, .no-projects, .error-message {
+grid-column: 1 / -1;
+text-align: center;
+padding: 3rem 1rem;
+color: var(--text-color);
+}
+
+.no-projects i, .error-message i {
+font-size: 2.5rem;
+color: var(--primary-color);
+margin-bottom: 1rem;
+opacity: 0.8;
+}
+
+.error-message .btn {
+display: inline-block;
+margin-top: 1rem;
+padding: 0.5rem 1.5rem;
+background: var(--primary-color);
+color: white;
+text-decoration: none;
+border-radius: 5px;
+transition: background-color 0.2s ease;
+}
+
+.error-message .btn:hover {
+background-color: #5a4fcf;
+}
+
+/* Estilos para o tema escuro */
 .dark-theme .project-card {
-    background: var(--light-gray);
+background: #2d3748;
+border-color: #4a5568;
 }
 
-.dark-theme .project-info h3 {
-    color: #e2e8f0;
+.dark-theme .project-content h3 {
+color: #e2e4e7;
 }
 
-.dark-theme .project-info p {
-    color: #a0aec0;
+.dark-theme .project-content p {
+color: #a0aec0;
 }
 
-.loading {
-    text-align: center;
-    padding: 2rem;
-    color: var(--text-color);
-    grid-column: 1 / -1;
+.dark-theme .project-links a {
+color: #a0aec0;
+}
+
+.dark-theme .project-links a:hover {
+color: var(--primary-color);
+}
+
+.dark-theme .project-footer {
+border-top-color: #4a5568;
+color: #a0aec0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+.projects-container {
+grid-template-columns: 1fr;
+}
+    
+#projetos {
+padding: 3rem 1.5rem;
+}
 }
 
 /* Estilos para os cards de projeto */
 .project-stats {
-    margin-top: 1rem;
-    display: flex;
+margin-top: 1rem;
+display: flex;
+gap: 1rem;
+color: var(--light-gray);
+font-size: 0.9rem;
     gap: 1rem;
     color: var(--light-gray);
     font-size: 0.9rem;
