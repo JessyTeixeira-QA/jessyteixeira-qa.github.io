@@ -401,14 +401,14 @@ body {
 .formacoes-container {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1.25rem;
-    margin-top: 2.5rem;
+    gap: 1rem;
+    margin-top: 2rem;
 }
 
 .formacao-card {
     background: var(--white);
-    border-radius: 999px;
-    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
     overflow: hidden;
     display: flex;
     align-items: center;
