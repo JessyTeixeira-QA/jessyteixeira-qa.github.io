@@ -159,11 +159,6 @@ body {
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-size: 0.9rem;
-    font-weight: 600;
-    display: inline-block;
-    margin-bottom: 1.5rem;
-    border: none;
-    cursor: default;
 }
 
 .hero h1 {
@@ -513,9 +508,9 @@ body {
 /* Estilos para a seção de habilidades */
 .skills-container {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.75rem 2rem;
-    margin-top: 3rem;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-top: 2.5rem;
 }
 
 .skill-card {
