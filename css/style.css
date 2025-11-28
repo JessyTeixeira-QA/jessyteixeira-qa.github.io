@@ -509,15 +509,15 @@ body {
 .skills-container {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1.25rem;
-    margin-top: 2.5rem;
+    gap: 1rem;
+    margin-top: 2rem;
 }
 
 .skill-card {
     background: var(--white);
     border-radius: 18px;
-    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
-    padding: 1.75rem 2rem;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+    padding: 1.2rem 1.5rem;
     border: 1px solid #e5e7eb;
 }
 
@@ -525,7 +525,7 @@ body {
     display: flex;
     align-items: center;
     gap: 0.6rem;
-    margin-bottom: 1.1rem;
+    margin-bottom: 0.8rem;
 }
 
 .skill-card h3 {
@@ -549,7 +549,7 @@ body {
 .skill-tags {
     display: flex;
     flex-direction: column;
-    gap: 0.4rem;
+    gap: 0.25rem;
 }
 
 .skill-tags .skill-item {
