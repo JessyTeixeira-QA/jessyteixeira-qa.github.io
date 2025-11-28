@@ -22,10 +22,10 @@ themeToggle.addEventListener('click', () => {
 // Verificar preferência salva
 if (localStorage.getItem('darkMode') === 'true') {
     document.body.classList.add('dark-theme');
-    const icon = document.querySelector('.theme-toggle i');
-    if (icon) {
-        icon.classList.remove('fa-moon');
-        icon.classList.add('fa-sun');
+    const savedIcon = document.querySelector('.theme-toggle i');
+    if (savedIcon) {
+        savedIcon.classList.remove('fa-moon');
+        savedIcon.classList.add('fa-sun');
     }
 }
 
@@ -149,7 +149,8 @@ function getLanguageColor(language) {
     return colors[language] || '#cccccc';
 }
 
-// Dados dos documentos (você pode mover isso para um arquivo JSON separado posteriormente)
+// ---------- DADOS ----------
+
 const documentosTeste = [
     {
         id: 1,
@@ -159,59 +160,52 @@ const documentosTeste = [
         data: "15/11/2025",
         arquivo: "planos-teste/plano-teste-mobile.pdf"
     }
-    // Adicione mais documentos conforme necessário
-];
-
-const conteudosCriados = [
-    {
-        id: 1,
-        titulo: "Guia Prático de Testes Automáticos com Cypress",
-        descricao: "eBook com exemplos práticos e melhores práticas para automação de testes",
-        tipo: "eBook",
-        data: "Novembro 2025",
-        arquivo: "conteudo/ebook-cypress.pdf",
-        imagem: "imagens/capa-cypress.jpg"
-    }
-    // Adicione mais conteúdos conforme necessário
 ];
 
 const livrosLidos = [
     {
         id: 1,
         titulo: "Teste de Software - Produção de Qualidade",
-        autor: "Maurício Aniche",
-        categoria: "QA & Testes",
-        ano: "2024",
-        arquivo: "livros/teste-software-producao-qualidade.pdf",
-        capa: "imagens/capa-teste-software.jpg"
+        descricao: "Livro focado em fundamentos e boas práticas de testes de software.",
+        tipo: "Livro (PDF)",
+        data: "2024",
+        arquivo: "livros/teste-software-producao-qualidade.pdf"
     },
     {
         id: 2,
         titulo: "Clean Code",
-        autor: "Robert C. Martin",
-        categoria: "Desenvolvimento",
-        ano: "2024",
-        arquivo: "livros/clean-code.pdf",
-        capa: "imagens/capa-clean-code.jpg"
+        descricao: "Práticas para escrever código mais limpo e fácil de manter.",
+        tipo: "Livro (PDF)",
+        data: "2024",
+        arquivo: "livros/clean-code.pdf"
     },
     {
         id: 3,
         titulo: "O Guia Completo do Teste de Software",
-        autor: "Bill Hetzel",
-        categoria: "QA & Testes",
-        ano: "2025",
-        arquivo: "livros/guia-completo-teste-software.pdf",
-        capa: "imagens/capa-guia-teste.jpg"
+        descricao: "Visão geral completa sobre processos e técnicas de teste.",
+        tipo: "Livro (PDF)",
+        data: "2025",
+        arquivo: "livros/guia-completo-teste-software.pdf"
     }
-    // Adicione mais livros conforme necessário
 ];
 
-// Função para carregar os documentos de teste
+const conteudosCriados = [
+    {
+        id: 1,
+        titulo: "Guia Prático de Testes Automáticos com Cypress",
+        descricao: "eBook com exemplos práticos e melhores práticas para automação de testes.",
+        tipo: "eBook",
+        data: "Novembro 2025",
+        arquivo: "conteudo/ebook-cypress.pdf"
+    }
+];
+
+// ---------- FUNÇÕES DE LISTAGEM (modelo igual ao de Planos de Teste) ----------
+
 function carregarDocumentosTeste() {
     const container = document.getElementById('documentos-teste');
-    
     if (!container) return;
-    
+
     if (documentosTeste.length === 0) {
         container.innerHTML = `
             <div class="no-content">
@@ -221,7 +215,7 @@ function carregarDocumentosTeste() {
         `;
         return;
     }
-    
+
     container.innerHTML = documentosTeste.map(doc => `
         <div class="documento-card" onclick="abrirDocumento('${doc.arquivo}')">
             <div class="documento-icon">
@@ -239,10 +233,8 @@ function carregarDocumentosTeste() {
     `).join('');
 }
 
-// Função para carregar Livros Lidos
 function carregarLivrosLidos() {
     const container = document.getElementById('livros-lista');
-
     if (!container) return;
 
     if (livrosLidos.length === 0) {
@@ -256,35 +248,26 @@ function carregarLivrosLidos() {
     }
 
     container.innerHTML = livrosLidos.map(livro => `
-        <div class="livro-card" onclick="abrirConteudo('${livro.arquivo}')">
-            <div class="livro-main">
-                ${livro.capa ? `
-                    <div class="livro-capa">
-                        <img src="${livro.capa}" alt="Capa do livro ${livro.titulo}">
-                    </div>
-                ` : ''}
-                <div class="livro-info">
-                    <div class="livro-header">
-                        <span class="livro-icone"><i class="far fa-bookmark"></i></span>
-                        <h3>${livro.titulo}</h3>
-                    </div>
-                    <p class="livro-autor">${livro.autor}</p>
-                </div>
+        <div class="documento-card" onclick="abrirDocumento('${livro.arquivo}')">
+            <div class="documento-icon">
+                <i class="fas fa-book"></i>
             </div>
-            <div class="livro-footer">
-                <span class="livro-tag">${livro.categoria}</span>
-                <span class="livro-ano">${livro.ano}</span>
+            <div class="documento-content">
+                <h3>${livro.titulo}</h3>
+                <p>${livro.descricao}</p>
+                <div class="documento-meta">
+                    <span class="documento-tipo">${livro.tipo}</span>
+                    <span class="documento-data">${livro.data}</span>
+                </div>
             </div>
         </div>
     `).join('');
 }
 
-// Função para carregar o conteúdo criado
 function carregarConteudoCriado() {
     const container = document.getElementById('conteudo-lista');
-    
     if (!container) return;
-    
+
     if (conteudosCriados.length === 0) {
         container.innerHTML = `
             <div class="no-content">
@@ -294,18 +277,18 @@ function carregarConteudoCriado() {
         `;
         return;
     }
-    
+
     container.innerHTML = conteudosCriados.map(conteudo => `
-        <div class="conteudo-card" onclick="abrirConteudo('${conteudo.arquivo}')">
-            <div class="conteudo-imagem">
-                <img src="${conteudo.imagem || 'imagens/padrao.jpg'}" alt="${conteudo.titulo}">
+        <div class="documento-card" onclick="abrirConteudo('${conteudo.arquivo}')">
+            <div class="documento-icon">
+                <i class="far fa-file-alt"></i>
             </div>
-            <div class="conteudo-info">
+            <div class="documento-content">
                 <h3>${conteudo.titulo}</h3>
                 <p>${conteudo.descricao}</p>
-                <div class="conteudo-meta">
-                    <span class="conteudo-tipo">${conteudo.tipo}</span>
-                    <span class="conteudo-data">${conteudo.data}</span>
+                <div class="documento-meta">
+                    <span class="documento-tipo">${conteudo.tipo}</span>
+                    <span class="documento-data">${conteudo.data}</span>
                 </div>
             </div>
         </div>
@@ -325,12 +308,6 @@ function abrirConteudo(arquivo) {
 document.addEventListener('DOMContentLoaded', function() {
     fetchGitHubProjects();
     carregarDocumentosTeste();
-    carregarConteudoCriado();
     carregarLivrosLidos();
-    
-    // Inicializar a seção de formações
-    const formacoesContainer = document.querySelector('.formacoes-container');
-    if (formacoesContainer) {
-        // Se precisar carregar formações dinamicamente, faça aqui
-    }
+    carregarConteudoCriado();
 });
