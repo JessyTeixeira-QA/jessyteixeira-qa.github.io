@@ -1,174 +1,85 @@
-# Portfólio de QA - Jéssica Ferreira Teixeira
+# 🔎 Portfólio de QA - Jéssica Ferreira Teixeira | Foco em Automação (Cypress)
 
 Este repositório contém meu portfólio como **Engenheira de QA em formação**, desenvolvido para apresentar minhas habilidades, formações, projetos e materiais produzidos na área de qualidade de software.
 
+## 📑 Índice
+- [Sobre Mim](#sobre-mim)
+- [O que você vai encontrar (Estrutura do Site)](#estrutura-do-portfólio)
+- [Minhas Habilidades e Ferramentas](#3-minhas-habilidades)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Como rodar o projeto localmente](#como-rodar-o-projeto-localmente)
+- [Próximos Passos](#próximos-passos--ideias-futuras)
+
+---
+
 ## Sobre mim
 
-Sou **Jéssica Ferreira Teixeira**, profissional em formação na área de **Qualidade de Software (QA)**, com foco em:
+Sou **Jéssica Ferreira Teixeira**, profissional em formação na área de **Qualidade de Software (QA)**, com foco principal em:
 
-- Testes manuais e automáticos
-- Automação de testes (principalmente com Cypress)
-- Processos de qualidade e garantia de software
-- Testes de API
+> 🔑 **Especialidades:** Testes manuais e automáticos, Automação de Testes com **Cypress** e **Testes de API**.
 
-Estou em constante aprendizado, buscando sempre aprimorar meus conhecimentos técnicos e minhas soft skills, como comunicação, atenção aos detalhes e resolução de problemas.
+Estou em constante aprendizado, buscando sempre aprimorar meus conhecimentos técnicos e minhas soft skills, como comunicação, atenção aos detalhes e resolução de problemas, essenciais para a garantia da qualidade.
 
 ## Estrutura do Portfólio
 
-O site é composto pelas seguintes seções principais:
+O site é composto pelas seguintes seções principais, carregadas dinamicamente:
 
 ### 1. Hero / Apresentação
-
-- Apresentação com foto, nome, título profissional e um resumo do meu perfil.
-- Botões de acesso rápido para **Meus Projetos** e **Contato**.
+- Apresentação inicial com foto, título e botões de acesso rápido para **Meus Projetos** e **Contato**.
 
 ### 2. Projetos (GitHub)
-
-- Lista de projetos públicos do meu GitHub (`JessyTeixeira-QA`).
-- Os repositórios são carregados dinamicamente via **GitHub API**, ordenados por data de atualização.
-- Alguns repositórios são ignorados (ex.: o próprio portfólio).
-- Cada card mostra:
-  - Nome do repositório
-  - Descrição
-  - Linguagem principal com cor
-  - Data da última atualização
-  - Links para o código e, se existir, deploy/demo.
+- 🚀 Lista de projetos públicos do meu GitHub (`JessyTeixeira-QA`).
+- **Destaque:** Os repositórios são carregados dinamicamente via **GitHub API**, ordenados por data de atualização, garantindo que o conteúdo esteja sempre fresco.
 
 ### 3. Minhas Habilidades
 
-Organizadas em quatro blocos, em forma de lista, com ícones para cada habilidade:
+Organizadas para fácil escaneamento:
 
-- **Testes & QA**
-  - Testes Manuais
-  - Testes Automáticos
-  - Cypress
-  - Testes de Software
-  - Casos de Teste
-
-- **Ferramentas & Tecnologias**
-  - Cypress
-  - Postman
-  - Git / GitHub
-  - Excel
-  - Power BI
-
-- **Linguagens & Tecnologias**
-  - JavaScript
-  - HTML
-  - CSS
-  - Automação de Testes
-  - Testes de API
-
-- **Soft Skills**
-  - Atenção aos Detalhes
-  - Comunicação
-  - Trabalho em Equipe
-  - Resolução de Problemas
-  - Pensamento Crítico
+* **🛠️ Testes & QA:** Testes Manuais, Testes Automáticos, Testes de Software, Casos de Teste, Planos de Teste.
+* **⚙️ Ferramentas:** **Cypress (Destaque)**, **Postman**, Git / GitHub, Excel, Power BI.
+* **💻 Linguagens & Tecnologias:** JavaScript, HTML, CSS, Automação de Testes, Testes de API.
+* **💡 Soft Skills (Diferenciais):** Atenção aos Detalhes, Comunicação, Trabalho em Equipe, Resolução de Problemas, Pensamento Crítico.
 
 ### 4. Planos de Teste
-
-- Seção para **documentos de QA**, como planos de teste.
-- Os itens são definidos via JavaScript (lista `documentosTeste`) e exibidos em cards com:
-  - Título
-  - Descrição
-  - Tipo (ex.: PDF)
-  - Data
+- Seção dedicada a **documentos de QA**, como planos de teste, exibidos em cards.
 
 ### 5. Livros Lidos
-
-Seção "**Livros Lidos**" para registrar materiais importantes de estudo:
-
-- **Teste de Software - Produção de Qualidade** (Maurício Aniche)
-- **Clean Code** (Robert C. Martin)
-- **O Guia Completo do Teste de Software** (Bill Hetzel)
-
-Cada livro aparece em um card com ícone, autor, tag (ex.: QA & Testes, Desenvolvimento) e ano.
+- 📚 Registro de materiais de estudo importantes, como *Teste de Software - Produção de Qualidade* (Maurício Aniche) e *Clean Code*.
 
 ### 6. Conteúdo Criado
-
-- Espaço para **eBooks e artigos** que eu mesma produzi sobre QA e testes.
-- Os dados são carregados via JavaScript (lista `conteudosCriados`) e exibidos em cards com imagem, título, descrição, tipo e data.
+- Espaço para eBooks e artigos que eu mesma produzi sobre QA e testes.
 
 ### 7. Formações & Cursos
+- Lista das minhas principais formações (Ex: Formação: Carreira QA: processos e automação de testes – *Alura*), exibidas em um formato de *timeline*.
 
-Lista das minhas principais formações, em cards similares à timeline da imagem de referência, por exemplo:
+### 8. Contato e Rodapé
+- Formulário simples para contato e links diretos para minhas redes sociais (LinkedIn, GitHub, E-mail, Instagram).
 
-- Formação: A partir do zero: iniciante em programação – *Alura*  
-- Formação: Carreira QA: processos e automação de testes – *Alura*
+---
 
-Cada card mostra:
-- Título da formação
-- Instituição
-- Descrição/resumo
-- Data de conclusão e carga horária
+## 🧪 Tecnologias Utilizadas
 
-### 8. Contato
+Este projeto foi construído utilizando uma *stack* leve e eficiente:
 
-- Formulário simples com **Nome**, **E-mail** e **Mensagem**.
-- Botão para envio da mensagem (formato front-end; integração com backend pode ser adicionada futuramente).
+* **HTML5** para a estrutura da página.
+* **CSS3** (com Flexbox e Grid) para layout responsivo e tema claro/escuro.
+* **JavaScript (Puro)** para:
+    * Troca de tema (dark/light) com persistência em `localStorage`.
+    * Consumo da **GitHub API** para listar projetos.
+    * Carregamento dinâmico de planos de teste e conteúdo criado.
+* **Font Awesome** para ícones.
+* **GitHub Pages** para hospedagem.
 
-### 9. Rodapé e Redes Sociais
-
-No rodapé, estão os links para minhas redes:
-
-- LinkedIn
-- GitHub
-- E-mail (ícone de envelope com `mailto:`)
-- Instagram (link configurável)
-
-## Tecnologias Utilizadas
-
-- **HTML5** para a estrutura da página.
-- **CSS3** (com Flexbox e Grid) para layout responsivo e tema claro/escuro.
-- **JavaScript** puro para:
-  - Troca de tema (dark/light) com persistência em `localStorage`.
-  - Consumo da **GitHub API** para listar projetos.
-  - Carregamento dinâmico de planos de teste e conteúdo criado.
-- **Font Awesome** para ícones (skills, redes sociais, livros, mensagens de erro, etc.).
-- **GitHub Pages** para hospedagem do portfólio.
-
-## Como rodar o projeto localmente
-
-1. Clone o repositório:
-
-   ```bash
-   git clone https://github.com/JessyTeixeira-QA/jessyteixeira-qa.github.io.git
-   ```
-
-2. Entre na pasta do projeto:
-
-   ```bash
-   cd jessyteixeira-qa.github.io
-   ```
-
-3. Abra o arquivo `index.html` no navegador:
-
-   - Clique duas vezes no arquivo, ou
-   - Use uma extensão de "Live Server" no VS Code para melhor experiência.
-
-## Estrutura de Pastas
+## 📁 Estrutura de Pastas
 
 ```text
 jessyteixeira-qa.github.io/
 ├── css/
-│   └── style.css          # Estilos do portfólio
+│   └── style.css          # Estilos do portfólio
 ├── js/
-│   └── script.js          # Lógica de tema, GitHub API e dados dinâmicos
-├── imagens/               # Imagens do site (foto de perfil, capas etc.)
-├── planos-teste/          # PDFs de planos de teste
-├── conteudo/              # eBooks e outros materiais criados
-├── index.html             # Página principal do portfólio
-└── README.md              # Este arquivo
-```
-
-## Próximos Passos / Ideias Futuras
-
-- Adicionar mais formações, livros e conteúdos conforme eu avançar na carreira.
-- Incluir mais projetos de automação de testes (ex.: Cypress, Playwright, Selenium).
-- Integrar o formulário de contato com um serviço de envio de e-mail.
-- Adicionar testes automatizados para o próprio portfólio.
-
----
-
-Se você chegou até aqui e quer conversar sobre **oportunidades, projetos ou colaboração em QA**, fique à vontade para entrar em contato pelo formulário do site ou pelos links de redes sociais no rodapé.
+│   └── script.js          # Lógica de tema, GitHub API e dados dinâmicos
+├── imagens/               # Imagens do site
+├── planos-teste/          # PDFs de planos de teste
+├── conteudo/              # eBooks e outros materiais
+├── index.html             # Página principal do portfólio
+└── README.md              # Este arquivo
