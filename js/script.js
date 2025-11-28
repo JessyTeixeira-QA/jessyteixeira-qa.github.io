@@ -175,6 +175,37 @@ const conteudosCriados = [
     // Adicione mais conteúdos conforme necessário
 ];
 
+const livrosLidos = [
+    {
+        id: 1,
+        titulo: "Teste de Software - Produção de Qualidade",
+        autor: "Maurício Aniche",
+        categoria: "QA & Testes",
+        ano: "2024",
+        arquivo: "livros/teste-software-producao-qualidade.pdf",
+        capa: "imagens/capa-teste-software.jpg"
+    },
+    {
+        id: 2,
+        titulo: "Clean Code",
+        autor: "Robert C. Martin",
+        categoria: "Desenvolvimento",
+        ano: "2024",
+        arquivo: "livros/clean-code.pdf",
+        capa: "imagens/capa-clean-code.jpg"
+    },
+    {
+        id: 3,
+        titulo: "O Guia Completo do Teste de Software",
+        autor: "Bill Hetzel",
+        categoria: "QA & Testes",
+        ano: "2025",
+        arquivo: "livros/guia-completo-teste-software.pdf",
+        capa: "imagens/capa-guia-teste.jpg"
+    }
+    // Adicione mais livros conforme necessário
+];
+
 // Função para carregar os documentos de teste
 function carregarDocumentosTeste() {
     const container = document.getElementById('documentos-teste');
@@ -203,6 +234,46 @@ function carregarDocumentosTeste() {
                     <span class="documento-tipo">${doc.tipo}</span>
                     <span class="documento-data">${doc.data}</span>
                 </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+// Função para carregar Livros Lidos
+function carregarLivrosLidos() {
+    const container = document.getElementById('livros-lista');
+
+    if (!container) return;
+
+    if (livrosLidos.length === 0) {
+        container.innerHTML = `
+            <div class="no-content">
+                <i class="fas fa-book-open"></i>
+                <p>Nenhum livro cadastrado ainda.</p>
+            </div>
+        `;
+        return;
+    }
+
+    container.innerHTML = livrosLidos.map(livro => `
+        <div class="livro-card" onclick="abrirConteudo('${livro.arquivo}')">
+            <div class="livro-main">
+                ${livro.capa ? `
+                    <div class="livro-capa">
+                        <img src="${livro.capa}" alt="Capa do livro ${livro.titulo}">
+                    </div>
+                ` : ''}
+                <div class="livro-info">
+                    <div class="livro-header">
+                        <span class="livro-icone"><i class="far fa-bookmark"></i></span>
+                        <h3>${livro.titulo}</h3>
+                    </div>
+                    <p class="livro-autor">${livro.autor}</p>
+                </div>
+            </div>
+            <div class="livro-footer">
+                <span class="livro-tag">${livro.categoria}</span>
+                <span class="livro-ano">${livro.ano}</span>
             </div>
         </div>
     `).join('');
@@ -255,6 +326,7 @@ document.addEventListener('DOMContentLoaded', function() {
     fetchGitHubProjects();
     carregarDocumentosTeste();
     carregarConteudoCriado();
+    carregarLivrosLidos();
     
     // Inicializar a seção de formações
     const formacoesContainer = document.querySelector('.formacoes-container');
