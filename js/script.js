@@ -294,7 +294,6 @@ function carregarConteudoCriado() {
         </div>
     `).join('');
 }
-
 // Funções para abrir documentos/conteúdo
 function abrirDocumento(arquivo) {
     window.open(arquivo, '_blank');
