@@ -546,9 +546,7 @@ body {
     font-size: 0.9rem;
 }
 
-/* Estilos para a seção de documentos */
-.documentos-container {
-    display: grid;
+.skill-tags {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1.5rem;
     margin-top: 2rem;
