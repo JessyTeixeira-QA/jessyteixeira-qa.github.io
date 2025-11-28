@@ -522,11 +522,12 @@ body {
     border: 1px solid #e5e7eb;
     width: 100%;
     max-width: none;
+    text-align: center;
 }
 
 .skill-header {
     display: flex;
-    align-items: center;
+    justify-content: center;
     gap: 0.6rem;
     margin-bottom: 0.6rem;
 }
@@ -553,6 +554,8 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0.2rem;
+    align-items: center;
+    text-align: center;
 }
 
 .skill-tags .skill-item {
