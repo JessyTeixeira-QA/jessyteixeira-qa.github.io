@@ -399,16 +399,19 @@ body {
 
 /* Estilos para a seção de formações */
 .formacoes-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    margin-top: 2.5rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .formacao-card {
     background: var(--white);
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -422,17 +425,17 @@ body {
 }
 
 .formacao-icon {
-    background: var(--primary-color);
-    color: white;
+    background: #f5f3ff;
+    color: #4f46e5;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1.5rem;
-    min-width: 70px;
+    padding: 1.1rem;
+    min-width: 56px;
 }
 
 .formacao-icon i {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
 }
 
 .formacao-content {
@@ -466,7 +469,7 @@ body {
     align-items: center;
     font-size: 0.85rem;
     color: #6a737d;
-    padding-top: 0.5rem;
+    padding-top: 0.25rem;
 }
 
 .formacao-data {
